@@ -60,6 +60,26 @@ Produces: `InterventionDecision` (BLOCK, ALLOW, ALLOW_PRIORITIZE, etc.)
 Continuously improves through:
 - Explicit user feedback (ratings)
 - Implicit engagement signals
+
+---
+
+## 🧰 Developer Setup
+
+Install pre-commit hooks and development dependencies locally:
+
+```bash
+python -m pip install -r requirements.txt
+python -m pip install pre-commit
+pre-commit install
+```
+
+Run the test suite:
+
+```bash
+pytest -q
+```
+
+Formatting/linting guidelines are enforced via `pre-commit` (Black, isort, Flake8).
 - Value drift detection
 - Periodic re-estimation
 
