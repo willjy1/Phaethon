@@ -1,5 +1,7 @@
 # 🔥 Phaethon: Attention Firewall
 
+[![CI](https://github.com/willjy1/Phaethon/actions/workflows/ci.yml/badge.svg)](https://github.com/willjy1/Phaethon/actions/workflows/ci.yml)
+
 An intelligent attention firewall that learns your higher-order productive values and curates your entire digital experience accordingly by blocking misaligned content and prioritizing aligned content.
 
 ## 🎯 Vision
