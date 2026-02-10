@@ -87,21 +87,6 @@ class ContentItem(BaseModel):
     extracted_features: Optional[ContentFeatures] = None
     
     created_at: datetime = Field(default_factory=datetime.utcnow)
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "content_id": "article-abc123",
-                "source": "https://example.com/article",
-                "title": "Deep Learning Paper Summary",
-                "content_type": "article",
-                "domain": "example.com",
-                "metadata": {
-                    "author": "Jane Doe",
-                    "topics": ["AI", "learning"]
-                }
-            }
-        }
 
 
 # ============================================================================
@@ -123,25 +108,6 @@ class ValueProfile(BaseModel):
     )
     confidence: float = Field(ge=0.0, le=1.0, description="Certainty in inferred values")
     updated_at: datetime = Field(default_factory=datetime.utcnow)
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "values": {
-                    "productivity": {
-                        "focus": 0.92,
-                        "learning": 0.87,
-                        "output_quality": 0.95
-                    },
-                    "wellbeing": {
-                        "sleep_quality": 0.89,
-                        "stress_management": 0.76
-                    }
-                },
-                "confidence": 0.78,
-                "updated_at": "2026-02-10T12:34:56Z"
-            }
-        }
 
 
 class UserPreferences(BaseModel):
@@ -153,15 +119,6 @@ class UserPreferences(BaseModel):
     enable_implicit_feedback: bool = True
     allow_value_inference: bool = True
     notification_level: str = "normal"  # "minimal", "normal", "verbose"
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "max_update_frequency": 100,
-                "enable_explicit_feedback": True,
-                "notification_level": "normal"
-            }
-        }
 
 
 class SystemSettings(BaseModel):
@@ -238,25 +195,6 @@ class ScoringResult(BaseModel):
     recommended_action: InterventionAction
     
     timestamp: datetime = Field(default_factory=datetime.utcnow)
-    
-    class Config:
-        json_schema_extra = {
-            "example": {
-                "content_id": "article-abc123",
-                "user_id": "user-123",
-                "alignment_score": 0.91,
-                "productivity_impact": 0.85,
-                "wellbeing_impact": -0.12,
-                "confidence": 0.87,
-                "scores_by_value": {
-                    "focus": 0.85,
-                    "learning": 0.95,
-                    "productivity": 0.91
-                },
-                "reasoning": "High-value learning content (matches learning value 0.87)",
-                "recommended_action": "ALLOW_PRIORITIZE"
-            }
-        }
 
 
 class UserFeedback(BaseModel):
